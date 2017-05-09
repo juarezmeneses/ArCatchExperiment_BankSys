@@ -1,0 +1,256 @@
+========================================================================================================
+ArCatch.Checker Exception Handling Conformance Checking Report
+--------------------------------------------------------------------------------------------------------
+Label: (V) = Rule Pass | (X) = Rule Fail
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+(V) R1: only (ACC) can raise (ACCEx) 6 ms
+
+ -ACC module implementation classes:
+  -banksys.account.AbstractAccount
+  -banksys.account.SpecialAccount
+  -banksys.account.OrdinaryAccount
+  -banksys.account.SavingsAccount
+  -banksys.account.TaxAccount
+
+ -ACCEx exception implementation classes:
+  -banksys.account.exception.NegativeAmountException
+  -banksys.account.exception.InsufficientFundsException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R2: only (ACC) can signal (ACCEx) 0 ms
+
+ -ACC module implementation classes:
+  -banksys.account.AbstractAccount
+  -banksys.account.SpecialAccount
+  -banksys.account.OrdinaryAccount
+  -banksys.account.SavingsAccount
+  -banksys.account.TaxAccount
+
+ -ACCEx exception implementation classes:
+  -banksys.account.exception.NegativeAmountException
+  -banksys.account.exception.InsufficientFundsException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R3: only (ACC) can signal (ACCEx) 0 ms
+
+ -ACC module implementation classes:
+  -banksys.account.AbstractAccount
+  -banksys.account.SpecialAccount
+  -banksys.account.OrdinaryAccount
+  -banksys.account.SavingsAccount
+  -banksys.account.TaxAccount
+
+ -ACCEx exception implementation classes:
+  -banksys.account.exception.NegativeAmountException
+  -banksys.account.exception.InsufficientFundsException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R4: only (PER) can raise (PEREx) 10 ms
+
+ -PER module implementation classes:
+  -banksys.persistence.AccountVector
+  -banksys.persistence.IAccountRepository
+
+ -PEREx exception implementation classes:
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R5: only (PER) can signal (PEREx) 0 ms
+
+ -PER module implementation classes:
+  -banksys.persistence.AccountVector
+  -banksys.persistence.IAccountRepository
+
+ -PEREx exception implementation classes:
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R6: (PER) can signal only (PEREx) 1 ms
+
+ -PER module implementation classes:
+  -banksys.persistence.AccountVector
+  -banksys.persistence.IAccountRepository
+
+ -PEREx exception implementation classes:
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R7: (CTL) can signal only (CTLEx) 0 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R8: only (CTL) can signal (CTLEx) 0 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R9: (CTL) must signal (CTLEx) 1 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R10: (CTL) can signal only (CTLEx) 0 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(X) R11: (CTL) must handle (PEREx) 1 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -PEREx exception implementation classes:
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+ -Rule Violations
+	-The method [banksys.control.BankController.doCredit(java.lang.String,double)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankController.doEarnBonus(java.lang.String)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankController.doEarnInterest(java.lang.String)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankController.doTransfer(java.lang.String,java.lang.String,double)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankController.doDebit(java.lang.String,double)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankController.getBalance(java.lang.String)] is not handling at least one exception in [PEREx]
+	-The method [banksys.control.BankControllerProduct.doCredit(java.lang.String,double,banksys.persistence.IAccountRepository)] is not handling at least one exception in [PEREx]
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R12: only (CTL) can handle (PEREx) 1 ms
+
+ -CTL module implementation classes:
+  -banksys.control.BankController
+  -banksys.control.BankControllerProduct
+
+ -PEREx exception implementation classes:
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R13: (VIEW) can handle only (CTLEx) 0 ms
+
+ -VIEW module implementation classes:
+  -banksys.atm.ATM24H
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R14: only (VIEW) can handle (CTLEx) 0 ms
+
+ -VIEW module implementation classes:
+  -banksys.atm.ATM24H
+
+ -CTLEx exception implementation classes:
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R15: (VIEW) cannot raise (AllEx) 2 ms
+
+ -VIEW module implementation classes:
+  -banksys.atm.ATM24H
+
+ -AllEx exception implementation classes:
+  -banksys.account.exception.NegativeAmountException
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+  -banksys.account.exception.InsufficientFundsException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+(V) R16: (VIEW) cannot signal (AllEx) 0 ms
+
+ -VIEW module implementation classes:
+  -banksys.atm.ATM24H
+
+ -AllEx exception implementation classes:
+  -banksys.account.exception.NegativeAmountException
+  -banksys.persistence.exception.AccountDeletionException
+  -banksys.control.exception.IncompatibleAccountException
+  -banksys.control.exception.BankTransactionException
+  -banksys.account.exception.InsufficientFundsException
+  -banksys.persistence.exception.PersistenceException
+  -banksys.persistence.exception.AccountNotFoundException
+  -banksys.persistence.exception.AccountCreationException
+  -banksys.persistence.exception.ExistingAccountException
+
+--------------------------------------------------------------------------------------------------------
+
